@@ -35,7 +35,12 @@ Route::post('/logout', function () {
 
 // ダッシュボード
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    // ユーザーが教師か生徒かを確認
+    if (Auth::user()->role === 'teacher') {
+        return redirect()->route('teacher.home');
+    } else {
+        return redirect()->route('student.home');
+    }
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 // ログイン後のルート（教師・生徒用）
