@@ -1,0 +1,60 @@
+/* teacher_home.css */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.post-item {
+    margin-bottom: 20px;
+    border: 1px solid #ddd; /* 各投稿の区切り線 */
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+/* マウスオーバー時に少し拡大 */
+.post-item:hover {
+    transform: scale(1.05);
+}
+
+/* 投稿のリンク全体を囲む */
+.post-link {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+}
+
+.post-title h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.post-body {
+    margin: 10px 0;
+}
+
+.post-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.post-date {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #777;
+}
+
+.post-date p {
+    margin: 0;
+}
