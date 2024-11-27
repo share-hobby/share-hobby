@@ -23,6 +23,16 @@
             </div>
         @endif
 
+        <!-- 求める生徒像 -->
+        <div class="post-body">
+            <p>{{ $post->student_image }}</p>
+        </div>
+        
+        <!-- 生徒のレベル感 -->
+        <div class="post-body">
+            <p>{{ $post->student_level }}</p>
+        </div>
+
         <!-- 作成日時と投稿者 -->
         <div class="post-meta">
             <p><strong>作成日時:</strong> {{ $post->created_at->format('Y-m-d H:i') }}</p>
