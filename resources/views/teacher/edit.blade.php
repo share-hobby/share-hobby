@@ -47,7 +47,7 @@
             <button type="submit" class="btn btn-primary">更新する</button>
         </form>
 
-        <a href="{{ route('posts.show', $post->id) }}" class="btn btn-secondary">戻る</a>
+        <a href="{{ route('teacher.posts.show', $post->id) }}" class="btn btn-secondary">戻る</a>
     </div>
 </body>
 </html>
