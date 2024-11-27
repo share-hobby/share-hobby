@@ -44,6 +44,16 @@
                 @endif
             </div>
 
+            <div class="form-group">
+                <label for="student_image">求める生徒像</label>
+                <textarea name="student_image" id="student_image" rows="5" required class="form-control">{{ old('student_image', $post->student_image) }}</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="student_level">求める生徒のレベル</label>
+                <textarea name="student_level" id="student_level" rows="5" required class="form-control">{{ old('student_level', $post->student_level) }}</textarea>
+            </div>
+
             <button type="submit" class="btn btn-primary">更新する</button>
         </form>
 

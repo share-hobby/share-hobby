@@ -24,12 +24,12 @@
         @endif
 
         <!-- 求める生徒像 -->
-        <div class="post-body">
+        <div class="post-student_image">
             <p>{{ $post->student_image }}</p>
         </div>
         
         <!-- 生徒のレベル感 -->
-        <div class="post-body">
+        <div class="post-student_level">
             <p>{{ $post->student_level }}</p>
         </div>
 

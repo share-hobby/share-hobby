@@ -69,6 +69,8 @@ public function update(Request $request, $id)
     $post->update([
         'title' => $request->title,
         'body' => $request->body,
+        'student_image' => $request->student_image,
+        'student_level' => $request->student_level,
     ]);
     return redirect()->route('teacher.posts.show', $post->id)->with('success', '投稿が更新されました');
 }
