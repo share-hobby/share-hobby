@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; /* モダンで洗練されたフォント */
+    background: linear-gradient(135deg, #A2D9FF, #E0F7FF); /* 水色系のグラデーション背景 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background-image: linear-gradient(-60deg, rgb(63, 124, 217) 50%, #09f 50%);
+  opacity: 0.5;
+  z-index: -1;
+  animation: slide 3s ease-in-out 1 forwards; /* 3秒間だけアニメーションを実行 */
+}
+body::after {
+  animation-direction: alternate-reverse;
+  animation-duration: 3s;
+}
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9); /* 背景をやや透明に */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* 柔らかい影 */
+    padding: 30px 50px;
+    max-width: 700px;
+    width: 90%;
+    border: 2px solid #A2D9FF; /* 水色の枠線 */
+    animation: popup 2s cubic-bezier(0.22, 1, 0.36, 1) forwards; /* アニメーションの追加 */
+}
+@keyframes popup {
+    0% {
+        transform: translateY(40px) scale(0.8);
+        opacity: 0;
+    }
+    80%, 100% {
+        transform: translateY(0) scale(1.0);
+        opacity: 1;
+    }
+}
+.container {
+    width: 90%;
+    max-width: 800px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden; /* 子要素のはみ出しを隠す */
+}
+/* アニメーション効果 */
+/* コンテナ */
+/* コンテナスタイル */
+.container {
+    width: 90%;
+    max-width: 800px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden; /* 子要素をコンテナ内に制限 */
+}
+/* 見出しのスタイル */
+.container h1 {
+    font-size: 70px;
+    font-weight: bold;
+    color: #007ACC; /* 落ち着いた水色 */
+    margin-bottom: 10px;
+    padding: 1 px;
+    text-shadow: 1px 1px 2px rgba(0, 122, 204, 0.2); /* 軽い影 */
+}
+/* ボタンスタイル */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 25px 40px;
+    margin: 10px 30px;
+    font-size: 25px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px; /* 丸みを帯びた形状 */
+    color: #fff;
+    background: linear-gradient(135deg, #00BFFF, #007ACC); /* ボタンの水色グラデーション */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+.btn:hover {
+    background: linear-gradient(135deg, #007ACC, #005F99); /* ホバー時に濃い水色 */
+    transform: translateY(-3px); /* 少し浮き上がる */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+.btn:active {
+    transform: translateY(4px); /* クリック時に少し沈む */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+/* レスポンシブデザイン */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 30px;
+    }
+    .container h1 {
+        font-size: 1.5em;
+    }
+    .btn {
+        font-size: 0.9em;
+        padding: 10px 20px;
+    }
+}
