@@ -67,7 +67,7 @@ public function update(Request $request, $id)
         'title' => $request->title,
         'body' => $request->body,
     ]);
-    return redirect()->route('posts.show', $post->id)->with('success', '投稿が更新されました');
+    return redirect()->route('teacher.posts.show', $post->id)->with('success', '投稿が更新されました');
 }
 
 public function destroy($id)
