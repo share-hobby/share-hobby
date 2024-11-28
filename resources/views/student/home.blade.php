@@ -15,7 +15,7 @@
                 <button type="submit" class="btn-logout">ログアウト</button>
         </form>
 
-
+        <a href="{{ route('student.chat') }}" class="btn-chat">チャット画面へ</a>
 
         <h2>投稿一覧</h2>
         @if($posts->isEmpty())
@@ -36,5 +36,6 @@
             </ul>
         @endif
     </div>
+
 </body>
 </html>

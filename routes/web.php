@@ -12,6 +12,7 @@ use App\Http\Controllers\AdminsController;
 use App\Http\Controllers\ChatsController;
 
 
+
 // よく使われるルート
 Route::get('/', function () {
     return view('welcome');
@@ -62,7 +63,8 @@ Route::middleware('auth')->group(function () {
     // 生徒用
     Route::get('/student/home', [StudentController::class, 'index'])->name('student.home');
     Route::get('/student/posts/{post}', [StudentController::class, 'show'])->name('student.posts.show');
-    
+    Route::get('/student/chat', [ChatController::class, 'index'])->name('student.chat');
+
     // プロフィール管理
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
