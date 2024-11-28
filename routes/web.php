@@ -59,11 +59,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
     Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
     Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+    Route::get('/teacher/chat', [ChatController::class, 'indexTeacher'])->name('teacher.chat');
 
     // 生徒用
     Route::get('/student/home', [StudentController::class, 'index'])->name('student.home');
     Route::get('/student/posts/{post}', [StudentController::class, 'show'])->name('student.posts.show');
-    Route::get('/student/chat', [ChatController::class, 'index'])->name('student.chat');
+    Route::get('/student/chat', [ChatController::class, 'indexStudent'])->name('student.chat');
 
     // プロフィール管理
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

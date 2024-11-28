@@ -12,6 +12,7 @@
         <h1>ようこそ、{{ $user->name }} さん</h1>
         <a href="{{ route('posts.create') }}" class="btn-create">投稿作成</a>
         <p>あなたは講師です</p>
+        <a href="{{ route('teacher.chat') }}" class="btn-chat">チャット画面へ</a>
 
         <!-- 投稿一覧セクション -->
         <h2>投稿一覧</h2>
