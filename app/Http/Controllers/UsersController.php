@@ -149,7 +149,7 @@ class UsersController extends Controller
     
     
     public function check(Request $request)
-{
+    {
      $request->validate([
         'email' => 'required|email',
         'password' => 'required|min:5|max:12'
@@ -173,9 +173,9 @@ class UsersController extends Controller
         'LoggedUserName' => $userInfo->name,  
     ]);
      return redirect()->route('user.dashboard');
-}
+    }
 
-    
+
 
     
 
@@ -193,7 +193,7 @@ class UsersController extends Controller
 
 
     public function save(Request $request)
-{
+    {
     $request->validate([
         'name' => 'required|string|max:255',
         'email' => 'required|string|email|max:255|unique:users',
@@ -210,6 +210,6 @@ class UsersController extends Controller
     ]);
 
     return redirect()->route('user.login')->with('success', 'User created successfully!');
-}
+    }
 
 }

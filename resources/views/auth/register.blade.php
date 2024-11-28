@@ -44,6 +44,7 @@
 
                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
             </div>
+
             <!-- Role Selection (Student or Teacher) -->
             <div class="mt-4">
                 <x-input-label for="role" :value="__('Role')" />
@@ -62,6 +63,7 @@
                 <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
                 </a>
+
 
                 <x-primary-button class="ms-4">
                     {{ __('Register') }}

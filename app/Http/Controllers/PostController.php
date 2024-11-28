@@ -22,11 +22,14 @@ class PostController extends Controller
 {
     // バリデーションなし（必要であれば追加）
     $post = new Post();
-
     $post->title = $request->input('title');
     $post->body = $request->input('body');
     $post->zoomurl = $request->input('zoomurl');
     $post->user_id = Auth::id();  // ログインユーザーIDを設定
+    $post->student_image = $request->input('student_image');
+    $post->student_level = $request->input('student_level');
+
+
 
     if ($request->hasFile('image')) {
         $post->image = $request->file('image')->store('images', 'public');
@@ -66,6 +69,8 @@ public function update(Request $request, $id)
     $post->update([
         'title' => $request->title,
         'body' => $request->body,
+        'student_image' => $request->student_image,
+        'student_level' => $request->student_level,
     ]);
     return redirect()->route('teacher.posts.show', $post->id)->with('success', '投稿が更新されました');
 }

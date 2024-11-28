@@ -15,6 +15,8 @@ class Post extends Model
         'body',     
         'image',   
         'zoomurl', 
+        'student_image',
+        'student_level'
     ];
 
     // ユーザーとのリレーション（投稿は1人のユーザーに属する）
