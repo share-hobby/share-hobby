@@ -1,0 +1,136 @@
+/* 全体のスタイル */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4fa;
+    background-image: linear-gradient(135deg, #a2d9ff 25%, #e0f7ff 75%); /* グラデーション背景 */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    color: #333;
+    position: relative;
+}
+
+/* 上部3分の1に背景画像を設定 */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 33.33%;
+    background: url('/images/longblue3.png') no-repeat center center; /* 背景画像を中央に */
+    background-size: cover; /* 画像を横幅いっぱいに拡大 */
+    z-index: -1; /* 背景画像を他の要素の背面に配置 */
+    background-color: #a9d0f5; /* 画像が見えない部分の背景色 */
+}
+
+/* コンテナのスタイル */
+.container {
+    width: 90%;
+    max-width: 800px;
+    background: #ffffff; 
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    animation: popup 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    position: relative;
+    z-index: 1; /* 背景画像の上に表示 */
+    margin-top: calc(33.33vh + 20px); /* 背景画像の高さ分下に配置 */
+}
+
+/* アニメーション */
+@keyframes popup {
+    0% {
+        transform: translateY(40px) scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1.0);
+        opacity: 1;
+    }
+}
+
+h1 {
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #78d0f5, #4facfe);
+    color: #fff;
+    border-radius: 10px;
+    font-size: 2em;
+    font-weight: bold;
+    -webkit-text-stroke: 1px #000; /* 外枠 */
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+/* ラベルと入力欄 */
+label {
+    display: block;
+    font-size: 1em;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"], 
+textarea,
+input[type="url"],
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+    background-color: #ffffff;
+}
+
+/* 任意項目説明 */
+.optional {
+    font-size: 0.9em;
+    color: #666;
+    margin-left: 5px;
+}
+
+.form-action{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px; /* 必要に応じて余白を追加 */
+}
+
+button[type="submit"] {
+    display: flex;
+    justify-content: flex-end;
+    display: inline-block;
+    width: 150px;
+    padding: 12px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(135deg, #0078d7, #005f99);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+button[type="submit"]:active {
+    background: linear-gradient(135deg, #005f99, #004477);
+    transform: translateY(2px);
+}

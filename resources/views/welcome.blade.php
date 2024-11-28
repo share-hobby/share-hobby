@@ -33,6 +33,7 @@
     });
   </script>
 </head>
+<!--
 <body>
   <h1>Pusher Test</h1>
   <p>
@@ -40,3 +41,4 @@
     with event name <code>my-event</code>.
   </p>
 </body>
+  -->

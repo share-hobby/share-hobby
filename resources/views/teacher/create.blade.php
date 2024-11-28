@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>投稿作成</title>
-    <link rel="stylesheet" href="{{ asset('css/teacher_home.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/teacher_create.css') }}">
 </head>
+
 <body>
     <div class="container">
         <h1>投稿作成</h1>
@@ -33,9 +35,11 @@
                 <label for="image">画像 (任意)</label>
                 <input type="file" name="image" id="image" class="form-control">
             </div>
-
-            <button type="submit" class="btn-submit">投稿する</button>
+            <div class = "form-action">
+                <button type="submit" class="btn-submit">投稿する</button>
+            </div>
         </form>
     </div>
 </body>
+
 </html>
