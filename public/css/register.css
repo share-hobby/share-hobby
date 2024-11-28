@@ -1,0 +1,81 @@
+.custom-image {
+    width: 400px;
+    height: auto;
+    position: absolute; /* 絶対位置指定 */
+    top: 14%; /* 上から10%の位置に配置 */
+    left: 50%; /* 横幅の中央に配置 */
+    transform: translateX(-50%); /* 水平方向に中央揃え */
+    z-index: 1; /* 他の要素より前面に表示 */
+}
+
+
+/* コンテナの背景スタイル調整 */
+.register-full-screen-container {
+    background-color: #def7ff;
+    height: auto; /* 内容の高さに合わせる */
+    min-height: 80vh; /* 背景全体を画面に広げる */
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* 画像とフォームを縦方向に配置 */
+    align-items: center; /* 中央揃え */
+    justify-content: center;
+    margin: 0;
+    padding: 20px; /* 全体に余白を追加 */
+}
+
+/* フォームのスタイル */
+.register-form-container {
+    background: #d1e4ff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px; /* フォームの最大幅を制限 */
+}
+
+/* Roleセクションの枠線と背景色 */
+.role {
+    display: flex;
+    justify-content: center; /* 横方向で中央揃え */
+    margin-top: 16px; /* 上部に余白を追加 */
+    border: 2px solid white; /* 白色の線を設定 */
+    background-color: white; /* 背景も白色に設定 */
+    padding: 8px; /* 内側の余白 */
+    border-radius: 8px; /* 角を丸くする */
+    margin-top: 10px; /* 上部に余白を追加 */
+}
+
+/* 全体のテキスト中央揃え */
+body, .register-full-screen-container {
+    text-align: center; /* 全体のテキストを中央揃え */
+}
+
+/* リンクのスタイル調整 */
+a.underline {
+    color: #4a90e2; /* リンクの色を変更 */
+    text-decoration: underline;
+    font-size: 0.9em;
+}
+
+a.underline:hover {
+    color: #2a5db0; /* ホバー時の色変更 */
+}
+
+.ms-3,.ms-4 {
+    margin-left: 16px; /* ボタン間の余白を少し広げる */
+    padding: 10px 20px; /* ボタンの内側余白を調整 */
+    font-size: 1rem; /* ボタンのフォントサイズを調整 */
+    background: linear-gradient(to right, #4a90e2, #2a5db0); /* 青系のグラデーションを適用 */
+    color: white; /* ボタンの文字色を白に設定 */
+    border: none; /* ボタンの枠線を削除 */
+    border-radius: 8px; /* ボタンの角を丸くする */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ボタンに影を追加 */
+    cursor: pointer; /* カーソルをポインタに変更 */
+    transition: all 0.3s ease; /* ホバー時のアニメーションを追加 */
+}
+
+.ms-3,.ms-4:hover {
+    background: linear-gradient(to right, #2a5db0, #1a3a5f); /* ホバー時の色変更 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 影を強調 */
+    transform: translateY(-2px); /* ボタンを少し上に浮かせる */
+}
