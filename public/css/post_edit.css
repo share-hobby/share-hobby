@@ -124,6 +124,7 @@ button[type="submit"]:hover {
 a.btn-secondary {
     background: linear-gradient(135deg, #ff5757, #f58a8a);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 15px;
 }
 
 a.btn-secondary:hover {
