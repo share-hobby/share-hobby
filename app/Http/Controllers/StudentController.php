@@ -10,7 +10,7 @@ class StudentController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $posts = Post::all(); 
+        $posts = Post::latest()->get();
         return view('student.home', compact('user', 'posts'));
     }
     public function show($id)
