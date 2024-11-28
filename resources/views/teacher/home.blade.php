@@ -30,9 +30,7 @@
                             <div class="post-title">
                                 <h3>{{ $post->title }}</h3>
                             </div>
-                            <div class="post-body">
-                                <p>{{ Str::limit($post->body, 100) }}</p> <!-- 本文を100文字に制限 -->
-                            </div>
+                    
                             <div class="post-image">
                                 @if($post->image)
                                     <img src="{{ asset('storage/' . $post->image) }}" alt="投稿画像">
