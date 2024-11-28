@@ -1,0 +1,153 @@
+/* 全体のスタイル */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(135deg, #a2d9ff 25%, #e0f7ff 75%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    color: #333;
+    position: relative;
+}
+
+/* 上部3分の1に背景画像を設定 */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 33.33%;
+    background: url('/images/longblue3.png') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+    background-color: #a9d0f5;
+}
+
+/* コンテナのスタイル */
+.container {
+    width: 90%;
+    max-width: 800px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    animation: popup 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    position: relative;
+    z-index: 1;
+    margin-top: calc(33.33vh + 20px);
+}
+
+/* アニメーション */
+@keyframes popup {
+    0% {
+        transform: translateY(40px) scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1.0);
+        opacity: 1;
+    }
+}
+
+/* 見出し */
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #007acc;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 4px rgba(0, 122, 204, 0.5);
+}
+
+/* フォームのスタイル */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+/* ボタンスタイル */
+button[type="submit"],
+a.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+}
+
+/* 更新ボタン */
+button[type="submit"] {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(135deg, #0078d7, #005f99);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+/* 戻るボタン */
+a.btn-secondary {
+    background: linear-gradient(135deg, #ff5757, #f58a8a);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+a.btn-secondary:hover {
+    background: linear-gradient(135deg, #d94343, #a83232);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+/* エラーメッセージ */
+.alert {
+    padding: 15px;
+    background-color: #ffdddd;
+    border-left: 5px solid #f44336;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.alert ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.alert li {
+    color: #333;
+    font-size: 0.9em;
+}

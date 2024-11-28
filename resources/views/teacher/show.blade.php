@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>{{ $post->title }} の詳細</h1>
+        <h1>{{ $post->title }}</h1>
         
         <!-- 投稿の本文 -->
         <div class="post-body">
