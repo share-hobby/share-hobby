@@ -25,7 +25,6 @@
                 @foreach($posts as $post)
                     <li class="post-item">
                         <h3>{{ $post->title }}</h3>
-                        <p>{{ $post->body }}</p>
                         @if($post->image)
                             <img src="{{ asset('storage/' . $post->image) }}" alt="投稿画像">
                         @endif
