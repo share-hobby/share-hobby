@@ -34,6 +34,16 @@
                 <input type="file" name="image" id="image" class="form-control">
             </div>
 
+            <div class="form-group">
+                <label for="student_image">求める生徒像 (任意)</label>
+                <input type="text" name="student_image" id="student_image" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="student_level">生徒レベル(任意)</label>
+                <input type="student_level" name="student_level" id="student_level" class="form-control">
+            </div>
+
             <button type="submit" class="btn-submit">投稿する</button>
         </form>
     </div>
