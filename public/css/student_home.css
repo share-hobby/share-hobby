@@ -1,102 +1,166 @@
-/* 投稿一覧ページ */
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.post-item {
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    background-color: #f9f9f9;
-}
-
-.post-item h3 {
-    font-size: 18px;
+/* 全体のスタイル */
+body {
     margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4fa; /* 優しい青色の背景 */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
     color: #333;
+    position: relative;
 }
 
-.post-item p {
-    font-size: 14px;
-    color: #555;
+/* 上部3分の1に背景画像を設定 */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 33.33%;
+    background: url('/images/longblue3.png') no-repeat center center; /* 背景画像を中央に */
+    background-size: cover; /* 画像を横幅いっぱいに拡大 */
+    z-index: -1; /* 背景画像を他の要素の背面に配置 */
+    background-color: #a9d0f5; /* 画像が見えない部分の背景色 */
 }
 
-.post-item img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 10px;
+/* コンテナのスタイル */
+.container {
+    width: 90%;
+    max-width: 800px;
+    background: #fff; /* 白背景 */
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    animation: popup 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    position: relative;
+    z-index: 1; /* 背景画像の上に表示 */
+    margin-top: calc(33.33vh + 20px); /* 背景画像の高さ分下に配置 */
 }
 
-.post-item .btn-view-details {
+/* アニメーション */
+@keyframes popup {
+    0% {
+        transform: translateY(40px) scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1.0);
+        opacity: 1;
+    }
+}
+
+/* 見出し */
+h1 {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: #007acc; /* 青文字 */
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 4px rgba(0, 122, 204, 0.5); /* 軽い影 */
+}
+
+/* 投稿作成ボタン */
+.btn-create {
     display: inline-block;
-    margin-top: 10px;
     padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
+    font-size: 1em;
+    color: #fff;
+    background: linear-gradient(135deg, #4facfe, #00f2fe); /* 青系のグラデーション */
+    border-radius: 20px;
     text-decoration: none;
-    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
-.post-item .btn-view-details:hover {
-    background-color: #45a049;
+.btn-create:hover {
+    background: linear-gradient(135deg, #0078d7, #005f99); /* ホバー時の濃い青 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
 }
 
-hr {
-    border: 0;
-    border-top: 1px solid #ccc;
+/* 投稿リストタイトル */
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
     margin: 20px 0;
 }
 
-/* 詳細ページ */
-.container {
-    width: 80%;
-    margin: 0 auto;
+/* 投稿リスト */
+.post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.post-item {
+    background: #f9fbff; /* 薄い青背景 */
+    border: 1px solid #dfe7f5;
+    border-radius: 10px;
     padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+.post-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-p {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.5;
+/* 投稿タイトル */
+.post-title h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #005f99;
 }
 
-img {
+/* 投稿本文 */
+.post-body p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* 投稿画像 */
+.post-image img {
     max-width: 100%;
-    height: auto;
+    border-radius: 10px;
     margin-top: 10px;
 }
 
-form {
-    margin-top: 20px;
+/* 投稿日時 */
+.post-date {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
 }
 
-button {
+/* ログアウトボタン */
+/* ログアウトボタンの通常時のスタイル */
+.btn-logout {
+    display: inline-block;
     padding: 10px 20px;
-    background-color: #008CBA;
-    color: white;
+    font-size: 1em;
+    color: #fff;
+    background: linear-gradient(135deg, #ff5757, #f58a8a); /* 赤系のグラデーション */
+    border-radius: 20px;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.3s ease; /* なめらかな変化を追加 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 初期の影 */
+    transform: translateY(0); /* 通常時は動かない */
 }
 
-button:hover {
-    background-color: #006f8e;
+/* ログアウトボタンのhover時のスタイル */
+.btn-logout:hover {
+    background: linear-gradient(135deg, #d94343, #a83232); /* 濃い赤グラデーション */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 濃い影 */
+    transform: translateY(-3px); /* 浮き上がる効果 */
 }
